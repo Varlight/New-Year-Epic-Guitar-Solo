@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎆 New Year Freebird Sync</title>
     <style>
-        /* Global Styling */
+        
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -19,7 +19,7 @@
             overflow: hidden;
         }
 
-        /* Fireworks Background */
+        
         .fireworks {
             position: fixed;
             top: 0;
@@ -32,7 +32,7 @@
             opacity: 0.6;
         }
 
-        /* Main Container */
+     
         .container {
             text-align: center;
             max-width: 800px;
@@ -54,7 +54,7 @@
             margin: 20px 0;
         }
 
-        /* Countdown Timer */
+        
         .countdown {
             font-size: 2.5em;
             font-weight: bold;
@@ -63,7 +63,7 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* Buttons */
+        
         button {
             padding: 15px 30px;
             font-size: 1.2em;
@@ -118,10 +118,10 @@
     </style>
 </head>
 <body>
-    <!-- Fireworks Background -->
+    
     <div class="fireworks"></div>
 
-    <!-- Main Content -->
+   
     <div class="container">
         <h1>🎆 Ring in the New Year with Freebird! 🎸</h1>
         <p>Sync the iconic guitar solo with the stroke of midnight and start the year with a bang!</p>
@@ -131,17 +131,17 @@
 
     <footer>
         <div class="footer-content">
-            Made with ❤️ for New Year's Eve | <a href="https://github.com/your-profile" target="_blank">View on GitHub</a>
+            Made with ❤️ for New Year's Eve | <a href="https://varlight.github.io/New-Year-Epic-Guitar-Solo/" target="_blank">View on GitHub</a>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    
     <script>
-        const audio = new Audio("Free Bird (TOTEM Remix).mp3"); // Replace with hosted MP3 link
+        const audio = new Audio("Free Bird (TOTEM Remix).mp3"); 
         const button = document.getElementById("start");
         const countdownEl = document.getElementById("countdown");
 
-        const SOLO_START = 84; // Seconds before midnight
+        const SOLO_START = 84; 
 
         button.addEventListener("click", () => {
             button.disabled = true;
@@ -149,14 +149,13 @@
 
             const now = new Date();
             const midnight = new Date();
-            midnight.setHours(24, 0, 0, 0); // Midnight today
-
+            midnight.setHours(24, 0, 0, 0); 
             const timeToMidnight = Math.floor((midnight - now) / 1000);
 
             if (timeToMidnight > SOLO_START) {
                 const playAt = timeToMidnight - SOLO_START;
 
-                // Countdown Timer
+                
                 const countdownInterval = setInterval(() => {
                     const remaining = Math.floor((midnight - new Date()) / 1000);
                     const minutes = String(Math.floor(remaining / 60)).padStart(2, '0');
@@ -164,7 +163,7 @@
                     countdownEl.textContent = `${minutes}:${seconds}`;
                 }, 1000);
 
-                // Play audio
+                
                 setTimeout(() => {
                     clearInterval(countdownInterval);
                     audio.play();
